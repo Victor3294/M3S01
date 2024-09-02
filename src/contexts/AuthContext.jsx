@@ -7,14 +7,12 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [authState, setAuthState] = useState({
     isAuthenticated: false,
-    token: null,
-    user: null,
+    user: null
   });
 
-  const login = (token, userData) => {
+  const login = (userData) => {
     setAuthState({
       isAuthenticated: true,
-      token,
       user: userData,
     });
   };
@@ -22,8 +20,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setAuthState({
       isAuthenticated: false,
-      token: null,
-      user: null,
+      user: null
     });
   };
 
